@@ -10,6 +10,15 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbSrc, setLbSrc] = useState("");
   const [lbAlt, setLbAlt] = useState("");
+  const childrenAfterCandidates = ["/images/gui2.png", "/images/gui2.jpeg", "/images/gui2.jpg"] as const;
+  const [childrenAfterSrcIndex, setChildrenAfterSrcIndex] = useState(0);
+  const childrenAfterSrc = childrenAfterCandidates[childrenAfterSrcIndex];
+
+  const handleChildrenAfterError = () => {
+    setChildrenAfterSrcIndex((prev) =>
+      prev < childrenAfterCandidates.length - 1 ? prev + 1 : prev
+    );
+  };
 
   const openMedia = (src: string, alt: string) => {
     setLbSrc(src);
@@ -129,27 +138,22 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
             <div
               className="gallery-image secondary"
               onClick={() =>
-                openMedia(
-                  "/images/gui2.png",
-                  "Ensaio infantil"
-                )
+                openMedia(childrenAfterSrc, "Ensaio infantil")
               }
               role="button"
               tabIndex={0}
             >
               <img
-                src="/images/gui2.png"
+                src={childrenAfterSrc}
                 alt="Ensaio infantil"
+                onError={handleChildrenAfterError}
               />
               <button
                 type="button"
                 className="idm-expand"
                 onClick={(e) => {
                   e.stopPropagation();
-                  openMedia(
-                    "/images/gui2.png",
-                    "Ensaio infantil"
-                  );
+                  openMedia(childrenAfterSrc, "Ensaio infantil");
                 }}
                 aria-label="Expandir imagem"
               >
