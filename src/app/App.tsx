@@ -25,24 +25,44 @@ export default function App() {
     { href: '#precos', label: 'Preços' },
   ];
 
-  const handleCTAClick = () => {
-    window.open(
-      buildWhatsappMessageUrl(
-        whatsappNumber,
-        'Olá! Gostaria de saber mais sobre os serviços do IDM Studio IA.'
-      ),
-      '_blank'
-    );
+  const openWhatsApp = (message: string) => {
+    window.open(buildWhatsappMessageUrl(whatsappNumber, message), '_blank');
+  };
+
+  const handleHeroCTAClick = () => {
+    openWhatsApp('Olá! Quero transformar minhas fotos com o IDM Studio IA. Pode me explicar como funciona?');
+  };
+
+  const handleGestanteCTAClick = () => {
+    openWhatsApp('Olá! Estou interessada no ensaio de gestante.');
+  };
+
+  const handleChildrenCTAClick = () => {
+    openWhatsApp('Olá! Estou interessada na edição de fotos infantis.');
+  };
+
+  const handleConvitesCTAClick = () => {
+    openWhatsApp('Olá! Estou interessada em convites temáticos personalizados.');
+  };
+
+  const handlePetsCTAClick = () => {
+    openWhatsApp('Olá! Estou interessada no ensaio de pets.');
+  };
+
+  const handleFashionCTAClick = () => {
+    openWhatsApp('Olá! Estou interessada no serviço de moda e vitrine com IA.');
+  };
+
+  const handleFinalPrimaryCTAClick = () => {
+    openWhatsApp('Olá! Quero falar no WhatsApp e entender qual serviço combina comigo.');
+  };
+
+  const handleFinalSecondaryCTAClick = () => {
+    openWhatsApp('Olá! Quero solicitar um orçamento.');
   };
 
   const handleSelectPlan = (plan: string) => {
-    window.open(
-      buildWhatsappMessageUrl(
-        whatsappNumber,
-        `Olá! Tenho interesse no plano ${plan}.`
-      ),
-      '_blank'
-    );
+    openWhatsApp(`Olá! Tenho interesse no plano ${plan}.`);
   };
   return (
     <div className="app">
@@ -90,27 +110,27 @@ export default function App() {
       </nav>
 
       {/* Landing Page Sections */}
-      <HeroSection onCTAClick={handleCTAClick} />
+      <HeroSection onCTAClick={handleHeroCTAClick} />
       <MissionSection />
       
       <div id="gestante">
-        <GestanteSection onCTAClick={handleCTAClick} />
+        <GestanteSection onCTAClick={handleGestanteCTAClick} />
       </div>
 
       <div id="criancas">
-        <ChildrenSection onCTAClick={handleCTAClick} />
+        <ChildrenSection onCTAClick={handleChildrenCTAClick} />
       </div>
 
       <div id="convites">
-        <ConvitesSection onCTAClick={handleCTAClick} />
+        <ConvitesSection onCTAClick={handleConvitesCTAClick} />
       </div>
 
       <div id="pets">
-        <PetsSection onCTAClick={handleCTAClick} />
+        <PetsSection onCTAClick={handlePetsCTAClick} />
       </div>
 
       <div id="moda">
-        <FashionSection onCTAClick={handleCTAClick} />
+        <FashionSection onCTAClick={handleFashionCTAClick} />
       </div>
 
       <HowItWorks />
@@ -119,7 +139,7 @@ export default function App() {
         <Pricing onSelectPlan={handleSelectPlan} />
       </div>
 
-      <FinalCTA onCTAClick={handleCTAClick} />
+      <FinalCTA onPrimaryCTAClick={handleFinalPrimaryCTAClick} onSecondaryCTAClick={handleFinalSecondaryCTAClick} />
 
       {/* Footer */}
       <footer className="footer">
