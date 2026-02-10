@@ -205,41 +205,7 @@ export function HowItWorks() {
     font-size: 16px;
   }
 
-  /* Mobile-first: 3 colunas compactas */
-  .steps-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .step-card:hover {
-    transform: none; /* evita "pulo" no toque */
-  }
-}
-
-/* Telas muito pequenas: mantém lado a lado (2 colunas) sem cortar */
-@media (max-width: 420px) {
-  .steps-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-          .section-title {
-            font-size: 36px;
-          }
-
-          .section-header {
-            margin-bottom: 48px;
-          }
-        }
-      
-
-/* === HOW IT WORKS GRID (CAROUSEL MOBILE) === */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 768px) {
+  /* Mobile: vira carrossel horizontal para manter legibilidade dos cards */
   .steps-grid {
     grid-auto-flow: column;
     grid-auto-columns: 85%;
@@ -253,6 +219,10 @@ export function HowItWorks() {
 
   .step-card {
     scroll-snap-align: start;
+  }
+
+  .step-card:hover {
+    transform: none; /* evita "pulo" no toque */
   }
 }
 
