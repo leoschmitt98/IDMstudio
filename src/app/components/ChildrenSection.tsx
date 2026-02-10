@@ -36,13 +36,13 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
           <p className="section-description">
             As crianças crescem rápido demais. Registre cada fase com imagens
             profissionais, cheias de emoção e carinho, sem sair de casa.
-            Também fazemos fotos tematicas perfeitas para albúns.
+            Também fazemos fotos temáticas perfeitas para álbuns.
           </p>
 
           <ul className="benefits-list">
             <li className="benefit-item">
               <Smile className="benefit-icon" />
-              <span className="highlight">EXPRESSÕES NATURAIS E EXPONTâNEAS</span>
+              <span className="highlight">EXPRESSÕES NATURAIS E ESPONTÂNEAS</span>
             </li>
             <li className="benefit-item">
               <Gift className="benefit-icon" />

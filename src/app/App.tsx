@@ -8,14 +8,30 @@ import { FashionSection } from './components/FashionSection';
 import { HowItWorks } from './components/HowItWorks';
 import { Pricing } from './components/Pricing';
 import { FinalCTA } from './components/FinalCTA';
+import { buildWhatsappMessageUrl, getWhatsAppNumber } from './whatsapp';
+
 
 export default function App() {
-    const handleCTAClick = () => {
-    window.open('https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre os serviços do IDM Studio IA.', '_blank');
+  const whatsappNumber = getWhatsAppNumber(import.meta.env.VITE_WHATSAPP_NUMBER);
+
+  const handleCTAClick = () => {
+    window.open(
+      buildWhatsappMessageUrl(
+        whatsappNumber,
+        'Olá! Gostaria de saber mais sobre os serviços do IDM Studio IA.'
+      ),
+      '_blank'
+    );
   };
 
   const handleSelectPlan = (plan: string) => {
-    window.open(`https://wa.me/5500000000000?text=Olá! Tenho interesse no plano ${plan}.`, '_blank');
+    window.open(
+      buildWhatsappMessageUrl(
+        whatsappNumber,
+        `Olá! Tenho interesse no plano ${plan}.`
+      ),
+      '_blank'
+    );
   };
   return (
     <div className="app">
