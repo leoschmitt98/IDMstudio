@@ -8,4 +8,8 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
+
+Run `npm test` to execute the automated tests.
+
+Set `VITE_WHATSAPP_NUMBER` in your environment (e.g. `.env`) to configure the WhatsApp destination used by CTA buttons.
   
