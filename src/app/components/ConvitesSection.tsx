@@ -305,10 +305,10 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
             padding: 80px 20px;
           }
           .gallery-image.main img {
-            height: 400px;
+            height: clamp(260px, 74vw, 400px);
           }
           .gallery-image.secondary img {
-            height: 200px;
+            height: clamp(140px, 38vw, 200px);
           }
         }
 
