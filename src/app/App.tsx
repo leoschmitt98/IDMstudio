@@ -14,7 +14,7 @@ import { appendCampaignContext, getUtmContext, trackCtaClick } from './marketing
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const whatsappNumber = getWhatsAppNumber(import.meta.env.VITE_WHATSAPP_NUMBER);
+  const whatsappNumber = getWhatsAppNumber('5551996359556');
 
   const navItems = [
     { href: '#gestante', label: 'Gestante' },
@@ -250,7 +250,7 @@ export default function App() {
             <div className="footer-social">
               <a href="#" className="social-link">Instagram</a>
               <a href="#" className="social-link">Facebook</a>
-              <a href="#" className="social-link">WhatsApp</a>
+              <a href={buildWhatsappMessageUrl(whatsappNumber, 'Olá! Vim pelo site e quero atendimento no WhatsApp.')} className="social-link" target="_blank" rel="noreferrer">WhatsApp</a>
             </div>
           </div>
         </div>

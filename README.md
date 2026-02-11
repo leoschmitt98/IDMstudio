@@ -11,6 +11,6 @@
 
 Run `npm test` to execute the automated tests.
 
-Set `VITE_WHATSAPP_NUMBER` in your environment (e.g. `.env`) to configure the WhatsApp destination used by CTA buttons.
+WhatsApp CTAs are currently configured to use the fixed number `5551996359556` in the application.
 
 UTM parameters (such as `utm_source`, `utm_medium`, and `utm_campaign`) are automatically appended to WhatsApp messages and CTA tracking payloads when present in the page URL.
