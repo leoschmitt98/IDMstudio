@@ -108,16 +108,20 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               className="gallery-image main"
               onClick={() =>
                 openMedia(
-                  "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                  "/images/video2.mp4",
                   "Modelo IA com roupa"
                 )
               }
               role="button"
               tabIndex={0}
             >
-              <img
-                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
-                alt="Modelo IA com roupa"
+              <video
+                src="/images/video2.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Ensaio gestante profissional"
               />
 
               <button
@@ -126,7 +130,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                    "/images/video2.mp4",
                     "Modelo IA com roupa"
                   );
                 }}
@@ -144,7 +148,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               className="gallery-image secondary"
               onClick={() =>
                 openMedia(
-                  "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                  "/images/roupa.png",
                   "Detalhe da roupa"
                 )
               }
@@ -152,7 +156,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               tabIndex={0}
             >
               <img
-                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+                src="/images/roupa.png"
                 alt="Detalhe da roupa"
                 style={{ filter: "brightness(1.1)" }}
               />
@@ -162,7 +166,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                    "/images/roupa.png",
                     "Detalhe da roupa"
                   );
                 }}
@@ -176,7 +180,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               className="gallery-image secondary"
               onClick={() =>
                 openMedia(
-                  "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                  "/images/modelo3.jpg",
                   "Modelo em pose"
                 )
               }
@@ -184,7 +188,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               tabIndex={0}
             >
               <img
-                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+                src="/images/modelo3.jpg"
                 alt="Modelo em pose"
                 style={{ filter: "saturate(1.2)" }}
               />
@@ -194,7 +198,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                    "/images/modelo3.jpg",
                     "Modelo em pose"
                   );
                 }}

@@ -1,4 +1,4 @@
-const DEFAULT_WHATSAPP_NUMBER = '51996359556';
+const DEFAULT_WHATSAPP_NUMBER = '5551996359556';
 
 export function getWhatsAppNumber(configuredNumber) {
   const normalized = configuredNumber?.trim();
