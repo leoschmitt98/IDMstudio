@@ -8,8 +8,8 @@ test('getWhatsAppNumber returns configured number when valid', () => {
 
 test('getWhatsAppNumber strips punctuation and falls back for blank values', () => {
   assert.equal(getWhatsAppNumber('+55 (11) 99999-9999'), '5511999999999');
-  assert.equal(getWhatsAppNumber('   '), '5500000000000');
-  assert.equal(getWhatsAppNumber(undefined), '5500000000000');
+  assert.equal(getWhatsAppNumber('   '), '51996359556');
+  assert.equal(getWhatsAppNumber(undefined), '51996359556');
 });
 
 test('buildWhatsappMessageUrl encodes message safely', () => {
