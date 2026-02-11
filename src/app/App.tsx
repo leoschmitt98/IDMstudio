@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { HeroSection } from './components/HeroSection';
 import { MissionSection } from './components/MissionSection';
 import { GestanteSection } from './components/GestanteSection';
@@ -10,7 +10,7 @@ import { HowItWorks } from './components/HowItWorks';
 import { Pricing } from './components/Pricing';
 import { FinalCTA } from './components/FinalCTA';
 import { buildWhatsappMessageUrl, getWhatsAppNumber } from './whatsapp';
-
+import { appendCampaignContext, getUtmContext, trackCtaClick } from './marketing';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
