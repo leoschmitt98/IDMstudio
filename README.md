@@ -8,4 +8,9 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
-  
+
+Run `npm test` to execute the automated tests.
+
+WhatsApp CTAs are currently configured to use the fixed number `5551996359556` in the application.
+
+UTM parameters (such as `utm_source`, `utm_medium`, and `utm_campaign`) are automatically appended to WhatsApp messages and CTA tracking payloads when present in the page URL.

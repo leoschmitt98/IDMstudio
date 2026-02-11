@@ -1,10 +1,11 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 
 interface FinalCTAProps {
-  onCTAClick: () => void;
+  onPrimaryCTAClick: () => void;
+  onSecondaryCTAClick: () => void;
 }
 
-export function FinalCTA({ onCTAClick }: FinalCTAProps) {
+export function FinalCTA({ onPrimaryCTAClick, onSecondaryCTAClick }: FinalCTAProps) {
   return (
     <section className="final-cta-section">
       <div className="final-cta-container">
@@ -18,11 +19,11 @@ export function FinalCTA({ onCTAClick }: FinalCTAProps) {
             elevar a qualidade das suas fotos para o próximo nível.
           </p>
           <div className="cta-buttons">
-            <button className="cta-button primary" onClick={onCTAClick}>
+            <button className="cta-button primary" onClick={onPrimaryCTAClick}>
               <MessageCircle className="icon" />
               Falar no WhatsApp
             </button>
-            <button className="cta-button secondary" onClick={onCTAClick}>
+            <button className="cta-button secondary" onClick={onSecondaryCTAClick}>
               Solicitar orçamento
               <ArrowRight className="icon" />
             </button>

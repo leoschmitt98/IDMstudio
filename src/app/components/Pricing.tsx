@@ -7,42 +7,46 @@ interface PricingProps {
 export function Pricing({ onSelectPlan }: PricingProps) {
   const plans = [
     {
-      name: 'Básico',
-      price: 'R$ 149',
+      name: '1 Foto',
+      price: 'R$ 10',
       period: '/pacote',
       features: [
-        '10 imagens editadas',
-        'Processamento em 48h',
-        'Resolução HD',
-        'Suporte por email'
+        '1 foto editada com IA',
+        'Entrega digital',
+        'Ideal para teste rápido',
       ],
       highlighted: false
     },
     {
-      name: 'Profissional',
-      price: 'R$ 349',
+      name: '3 Fotos',
+      price: 'R$ 25',
       period: '/pacote',
       features: [
-        '30 imagens editadas',
-        'Processamento em 24h',
-        'Resolução 4K',
-        'Suporte prioritário',
-        'Revisões ilimitadas',
-        'Modelos IA personalizados'
+        '3 fotos editadas com IA',
+        'Custo-benefício para lembranças',
+        'Entrega digital',
+      ],
+      highlighted: false
+    },
+    {
+      name: '10 Fotos',
+      price: 'R$ 80',
+      period: '/pacote',
+      features: [
+        '10 fotos editadas com IA',
+        'Melhor valor por foto',
+        'Entrega digital',
       ],
       highlighted: true
     },
     {
-      name: 'Empresarial',
-      price: 'Sob consulta',
-      period: '',
+      name: 'Fashion Mensal',
+      price: 'R$ 200',
+      period: '/mês',
       features: [
-        'Imagens ilimitadas',
-        'Processamento express',
-        'API de integração',
-        'Suporte 24/7',
-        'Gerente de conta dedicado',
-        'Treinamento de IA customizado'
+        'Até 50 fotos por mês',
+        'Foco em moda e vitrine IA',
+        'Ideal para lojas e catálogos',
       ],
       highlighted: false
     }
@@ -54,7 +58,7 @@ export function Pricing({ onSelectPlan }: PricingProps) {
         <div className="section-header">
           <h2 className="section-title">Escolha seu plano</h2>
           <p className="section-subtitle">
-            Pacotes flexíveis para atender suas necessidades
+Valores simples para você escolher o melhor plano
           </p>
         </div>
 
@@ -104,7 +108,7 @@ export function Pricing({ onSelectPlan }: PricingProps) {
 
         .pricing-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 32px;
           margin-top: 64px;
         }

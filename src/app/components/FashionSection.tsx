@@ -97,7 +97,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
 </div>
 
 <p className="section-note">
-             • Pacotes mensais disponíveis (orçamento no direct/ whatsapp)
+             • Plano Fashion: R$ 200/mês com direito a 50 fotos
           </p>
         </div>
 
@@ -207,7 +207,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
 
           {/* BOTÃO ABAIXO DAS FOTOS */}
            <button type="button" className="idm-cta" onClick={onCTAClick}>
-            Quero meu ensaio de gestante
+            Quero meu plano Fashion
           </button>
         </div>
       </div>
