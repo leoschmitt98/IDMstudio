@@ -25,44 +25,102 @@ export default function App() {
     { href: '#precos', label: 'Preços' },
   ];
 
-  const openWhatsApp = (message: string) => {
-    window.open(buildWhatsappMessageUrl(whatsappNumber, message), '_blank');
+  const utmContext = useMemo(
+    () => getUtmContext(window.location.search),
+    []
+  );
+
+  const openWhatsApp = ({
+    ctaId,
+    service,
+    message,
+  }: {
+    ctaId: string;
+    service: string;
+    message: string;
+  }) => {
+    const enrichedMessage = appendCampaignContext(message, utmContext);
+
+    trackCtaClick({
+      ctaId,
+      service,
+      message: enrichedMessage,
+      utmContext,
+    });
+
+    window.open(buildWhatsappMessageUrl(whatsappNumber, enrichedMessage), '_blank');
   };
 
   const handleHeroCTAClick = () => {
-    openWhatsApp('Olá! Quero transformar minhas fotos com o IDM Studio IA. Pode me explicar como funciona?');
+    openWhatsApp({
+      ctaId: 'hero_transformar_fotos',
+      service: 'geral',
+      message: 'Olá! Quero transformar minhas fotos com o IDM Studio IA. Pode me explicar como funciona?',
+    });
   };
 
   const handleGestanteCTAClick = () => {
-    openWhatsApp('Olá! Estou interessada no ensaio de gestante.');
+    openWhatsApp({
+      ctaId: 'gestante_cta',
+      service: 'gestante',
+      message: 'Olá! Estou interessada no ensaio de gestante.',
+    });
   };
 
   const handleChildrenCTAClick = () => {
-    openWhatsApp('Olá! Estou interessada na edição de fotos infantis.');
+    openWhatsApp({
+      ctaId: 'children_cta',
+      service: 'infantil',
+      message: 'Olá! Estou interessada na edição de fotos infantis.',
+    });
   };
 
   const handleConvitesCTAClick = () => {
-    openWhatsApp('Olá! Estou interessada em convites temáticos personalizados.');
+    openWhatsApp({
+      ctaId: 'convites_cta',
+      service: 'convites',
+      message: 'Olá! Estou interessada em convites temáticos personalizados.',
+    });
   };
 
   const handlePetsCTAClick = () => {
-    openWhatsApp('Olá! Estou interessada no ensaio de pets.');
+    openWhatsApp({
+      ctaId: 'pets_cta',
+      service: 'pets',
+      message: 'Olá! Estou interessada no ensaio de pets.',
+    });
   };
 
   const handleFashionCTAClick = () => {
-    openWhatsApp('Olá! Estou interessada no serviço de moda e vitrine com IA.');
+    openWhatsApp({
+      ctaId: 'fashion_cta',
+      service: 'moda_vitrine_ia',
+      message: 'Olá! Estou interessada no serviço de moda e vitrine com IA.',
+    });
   };
 
   const handleFinalPrimaryCTAClick = () => {
-    openWhatsApp('Olá! Quero falar no WhatsApp e entender qual serviço combina comigo.');
+    openWhatsApp({
+      ctaId: 'final_cta_primary',
+      service: 'geral',
+      message: 'Olá! Quero falar no WhatsApp e entender qual serviço combina comigo.',
+    });
   };
 
   const handleFinalSecondaryCTAClick = () => {
-    openWhatsApp('Olá! Quero solicitar um orçamento.');
+    openWhatsApp({
+      ctaId: 'final_cta_secondary',
+      service: 'orcamento',
+      message: 'Olá! Quero solicitar um orçamento.',
+    });
   };
 
   const handleSelectPlan = (plan: string) => {
-    openWhatsApp(`Olá! Tenho interesse no plano ${plan}.`);
+    openWhatsApp({
+      ctaId: `pricing_plan_${plan.toLowerCase()}`,
+      service: 'planos',
+      message: `Olá! Tenho interesse no plano ${plan}.`,
+    });
   };
   return (
     <div className="app">
