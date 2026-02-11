@@ -398,7 +398,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
           }
 
           .comparison-card img {
-            height: 300px;
+            height: clamp(220px, 60vw, 300px);
           }
 
           .hero-features {

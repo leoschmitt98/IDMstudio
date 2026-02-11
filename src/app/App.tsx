@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react';
 import { HeroSection } from './components/HeroSection';
 import { MissionSection } from './components/MissionSection';
 import { GestanteSection } from './components/GestanteSection';
@@ -8,14 +9,118 @@ import { FashionSection } from './components/FashionSection';
 import { HowItWorks } from './components/HowItWorks';
 import { Pricing } from './components/Pricing';
 import { FinalCTA } from './components/FinalCTA';
+import { buildWhatsappMessageUrl, getWhatsAppNumber } from './whatsapp';
+import { appendCampaignContext, getUtmContext, trackCtaClick } from './marketing';
 
 export default function App() {
-    const handleCTAClick = () => {
-    window.open('https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre os serviços do IDM Studio IA.', '_blank');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const whatsappNumber = getWhatsAppNumber(import.meta.env.VITE_WHATSAPP_NUMBER);
+
+  const navItems = [
+    { href: '#gestante', label: 'Gestante' },
+    { href: '#criancas', label: 'Crianças' },
+    { href: '#convites', label: 'Convites' },
+    { href: '#pets', label: 'Pets' },
+    { href: '#moda', label: 'Moda' },
+    { href: '#precos', label: 'Preços' },
+  ];
+
+  const utmContext = useMemo(
+    () => getUtmContext(window.location.search),
+    []
+  );
+
+  const openWhatsApp = ({
+    ctaId,
+    service,
+    message,
+  }: {
+    ctaId: string;
+    service: string;
+    message: string;
+  }) => {
+    const enrichedMessage = appendCampaignContext(message, utmContext);
+
+    trackCtaClick({
+      ctaId,
+      service,
+      message: enrichedMessage,
+      utmContext,
+    });
+
+    window.open(buildWhatsappMessageUrl(whatsappNumber, enrichedMessage), '_blank');
+  };
+
+  const handleHeroCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'hero_transformar_fotos',
+      service: 'geral',
+      message: 'Olá! Quero transformar minhas fotos com o IDM Studio IA. Pode me explicar como funciona?',
+    });
+  };
+
+  const handleGestanteCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'gestante_cta',
+      service: 'gestante',
+      message: 'Olá! Estou interessada no ensaio de gestante.',
+    });
+  };
+
+  const handleChildrenCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'children_cta',
+      service: 'infantil',
+      message: 'Olá! Estou interessada na edição de fotos infantis.',
+    });
+  };
+
+  const handleConvitesCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'convites_cta',
+      service: 'convites',
+      message: 'Olá! Estou interessada em convites temáticos personalizados.',
+    });
+  };
+
+  const handlePetsCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'pets_cta',
+      service: 'pets',
+      message: 'Olá! Estou interessada no ensaio de pets.',
+    });
+  };
+
+  const handleFashionCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'fashion_cta',
+      service: 'moda_vitrine_ia',
+      message: 'Olá! Estou interessada no serviço de moda e vitrine com IA.',
+    });
+  };
+
+  const handleFinalPrimaryCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'final_cta_primary',
+      service: 'geral',
+      message: 'Olá! Quero falar no WhatsApp e entender qual serviço combina comigo.',
+    });
+  };
+
+  const handleFinalSecondaryCTAClick = () => {
+    openWhatsApp({
+      ctaId: 'final_cta_secondary',
+      service: 'orcamento',
+      message: 'Olá! Quero solicitar um orçamento.',
+    });
   };
 
   const handleSelectPlan = (plan: string) => {
-    window.open(`https://wa.me/5500000000000?text=Olá! Tenho interesse no plano ${plan}.`, '_blank');
+    openWhatsApp({
+      ctaId: `pricing_plan_${plan.toLowerCase()}`,
+      service: 'planos',
+      message: `Olá! Tenho interesse no plano ${plan}.`,
+    });
   };
   return (
     <div className="app">
@@ -28,38 +133,62 @@ export default function App() {
           </div>
           
           <div className="nav-links">
-            <a href="#gestante" className="nav-link">Gestante</a>
-            <a href="#criancas" className="nav-link">Crianças</a>
-            <a href="#convites" className="nav-link">Convites</a>
-            <a href="#pets" className="nav-link">Pets</a>
-            <a href="#moda" className="nav-link">Moda</a>
-            <a href="#precos" className="nav-link">Preços</a>
+            {navItems.map((item) => (
+              <a key={item.href} href={item.href} className="nav-link">
+                {item.label}
+              </a>
+            ))}
           </div>
+
+          <button
+            type="button"
+            className="nav-menu-toggle"
+            aria-label="Abrir menu de navegação"
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            ☰
+          </button>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="mobile-menu">
+            {navItems.map((item) => (
+              <a
+                key={`mobile-${item.href}`}
+                href={item.href}
+                className="mobile-menu-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* Landing Page Sections */}
-      <HeroSection onCTAClick={handleCTAClick} />
+      <HeroSection onCTAClick={handleHeroCTAClick} />
       <MissionSection />
       
       <div id="gestante">
-        <GestanteSection onCTAClick={handleCTAClick} />
+        <GestanteSection onCTAClick={handleGestanteCTAClick} />
       </div>
 
       <div id="criancas">
-        <ChildrenSection onCTAClick={handleCTAClick} />
+        <ChildrenSection onCTAClick={handleChildrenCTAClick} />
       </div>
 
       <div id="convites">
-        <ConvitesSection onCTAClick={handleCTAClick} />
+        <ConvitesSection onCTAClick={handleConvitesCTAClick} />
       </div>
 
       <div id="pets">
-        <PetsSection onCTAClick={handleCTAClick} />
+        <PetsSection onCTAClick={handlePetsCTAClick} />
       </div>
 
       <div id="moda">
-        <FashionSection onCTAClick={handleCTAClick} />
+        <FashionSection onCTAClick={handleFashionCTAClick} />
       </div>
 
       <HowItWorks />
@@ -68,7 +197,7 @@ export default function App() {
         <Pricing onSelectPlan={handleSelectPlan} />
       </div>
 
-      <FinalCTA onCTAClick={handleCTAClick} />
+      <FinalCTA onPrimaryCTAClick={handleFinalPrimaryCTAClick} onSecondaryCTAClick={handleFinalSecondaryCTAClick} />
 
       {/* Footer */}
       <footer className="footer">
@@ -339,6 +468,35 @@ export default function App() {
           color: #8B5CF6;
         }
 
+
+        .nav-menu-toggle {
+          display: none;
+          border: 1px solid rgba(139, 92, 246, 0.45);
+          background: rgba(139, 92, 246, 0.2);
+          color: #FFFFFF;
+          border-radius: 10px;
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          line-height: 1;
+          cursor: pointer;
+        }
+
+        .mobile-menu {
+          display: none;
+        }
+
+        .mobile-menu-link {
+          color: #E5E7EB;
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: 500;
+          padding: 10px 12px;
+          border-radius: 10px;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         @media (max-width: 1024px) {
           .nav-links {
             gap: 16px;
@@ -361,6 +519,20 @@ export default function App() {
 
           .nav-links {
             display: none;
+          }
+
+          .nav-menu-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .mobile-menu {
+            display: grid;
+            gap: 10px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px 14px;
           }
 
           .footer {
