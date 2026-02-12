@@ -115,12 +115,14 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
-                loading="lazy"
-                fetchPriority="low"
-                decoding="async"
-                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
-                alt="Modelo IA com roupa"
+              <video
+               src="/images/video2.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Ensaio gestante profissional"
               />
 
               <button
@@ -158,7 +160,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
-                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+                src="/images/roupa.png"
                 alt="Detalhe da roupa"
                 style={{ filter: "brightness(1.1)" }}
               />
@@ -193,7 +195,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
-                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+                src="/images/modelo3.jpg"
                 alt="Modelo em pose"
                 style={{ filter: "saturate(1.2)" }}
               />
