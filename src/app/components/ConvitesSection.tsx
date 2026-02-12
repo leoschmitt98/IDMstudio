@@ -96,6 +96,7 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
             >
               <img
                 loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 src="/images/bento1.png"
                 alt="Convite temático infantil"
@@ -135,6 +136,7 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
             >
               <img
                 loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 src="/images/bento.jpeg"
                 alt="Criança com tema"
@@ -167,6 +169,7 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
             >
               <img
                 loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 src={invitesAfterSrc}
                 alt="Festa infantil temática"

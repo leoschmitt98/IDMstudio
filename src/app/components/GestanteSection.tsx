@@ -102,7 +102,7 @@ export function GestanteSection({ onCTAClick }: GestanteSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img src="/images/Pri3.jpeg" alt="Antes" loading="lazy" decoding="async" />
+              <img src="/images/Pri3.jpeg" alt="Antes" loading="lazy" fetchPriority="low" decoding="async" />
               <button
                 type="button"
                 className="idm-expand"
@@ -125,7 +125,7 @@ export function GestanteSection({ onCTAClick }: GestanteSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img src="/images/PriImagem1.png" alt="Depois" loading="lazy" decoding="async" />
+              <img src="/images/PriImagem1.png" alt="Depois" loading="lazy" fetchPriority="low" decoding="async" />
               <button
                 type="button"
                 className="idm-expand"

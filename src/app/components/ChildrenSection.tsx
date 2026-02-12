@@ -78,6 +78,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
             >
               <img
                 loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 src="/images/gui1.png"
                 alt="Ensaio infantil profissional"
@@ -117,6 +118,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
             >
               <img
                 loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 src="/images/gui4.jpeg"
                 alt="Criança sorrindo"
@@ -149,6 +151,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
             >
               <img
                 loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 src={childrenAfterSrc}
                 alt="Ensaio infantil"

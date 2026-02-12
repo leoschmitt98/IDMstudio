@@ -276,6 +276,16 @@ export default function App() {
           min-height: 100vh;
         }
 
+        .app section {
+          content-visibility: auto;
+          contain-intrinsic-size: 1000px;
+        }
+
+        .hero-section {
+          content-visibility: visible;
+          contain-intrinsic-size: auto;
+        }
+
         /* Navigation */
         .navigation {
           position: fixed;
