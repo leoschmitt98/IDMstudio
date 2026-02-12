@@ -10,6 +10,15 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbSrc, setLbSrc] = useState("");
   const [lbAlt, setLbAlt] = useState("");
+  const invitesAfterCandidates = ["/images/bento2.png", "/images/bento2.jpeg", "/images/bento2.jpg"] as const;
+  const [invitesAfterSrcIndex, setInvitesAfterSrcIndex] = useState(0);
+  const invitesAfterSrc = invitesAfterCandidates[invitesAfterSrcIndex];
+
+  const handleInvitesAfterError = () => {
+    setInvitesAfterSrcIndex((prev) =>
+      prev < invitesAfterCandidates.length - 1 ? prev + 1 : prev
+    );
+  };
 
   const openMedia = (src: string, alt: string) => {
     setLbSrc(src);
@@ -86,6 +95,8 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src="/images/bento1.png"
                 alt="Convite temático infantil"
               />
@@ -123,6 +134,8 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src="/images/bento.jpeg"
                 alt="Criança com tema"
               />
@@ -147,27 +160,24 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
             <div
               className="gallery-image secondary"
               onClick={() =>
-                openMedia(
-                  "/images/bento2.png",
-                  "Festa infantil temática"
-                )
+                openMedia(invitesAfterSrc, "Festa infantil temática")
               }
               role="button"
               tabIndex={0}
             >
               <img
-                src="/images/bento2.png"
+                loading="lazy"
+                decoding="async"
+                src={invitesAfterSrc}
                 alt="Festa infantil temática"
+                onError={handleInvitesAfterError}
               />
               <button
                 type="button"
                 className="idm-expand"
                 onClick={(e) => {
                   e.stopPropagation();
-                  openMedia(
-                    "/images/bento2.png",
-                    "Festa infantil temática"
-                  );
+                  openMedia(invitesAfterSrc, "Festa infantil temática");
                 }}
                 aria-label="Expandir imagem"
               >
@@ -305,10 +315,10 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
             padding: 80px 20px;
           }
           .gallery-image.main img {
-            height: 400px;
+            height: clamp(260px, 74vw, 400px);
           }
           .gallery-image.secondary img {
-            height: 200px;
+            height: clamp(140px, 38vw, 200px);
           }
         }
 

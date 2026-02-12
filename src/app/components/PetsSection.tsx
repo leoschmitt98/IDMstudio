@@ -88,6 +88,8 @@ export function PetsSection({ onCTAClick }: PetsSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src="/images/dadaEthor3.png"
                 alt="Ensaio de pet profissional"
               />
@@ -125,6 +127,8 @@ export function PetsSection({ onCTAClick }: PetsSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src="/images/dadaEthor.jpeg"
                 alt="Pet feliz"
                 style={{ filter: "brightness(1.1)" }}
@@ -160,6 +164,8 @@ export function PetsSection({ onCTAClick }: PetsSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src="/images/dadaEthor2.png"
                 alt="Pet brincando"
                 style={{ filter: "saturate(1.25)" }}

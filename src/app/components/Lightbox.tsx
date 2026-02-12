@@ -45,7 +45,7 @@ export function Lightbox({ open, src, alt = '', onClose }: LightboxProps) {
         </button>
 
         {isVideo(src) ? (
-          <video className="idm-lb__media" src={src} controls autoPlay playsInline />
+          <video className="idm-lb__media" src={src} controls autoPlay playsInline preload="metadata" />
         ) : (
           <img className="idm-lb__media" src={src} alt={alt} />
         )}
