@@ -10,6 +10,15 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbSrc, setLbSrc] = useState("");
   const [lbAlt, setLbAlt] = useState("");
+  const childrenAfterCandidates = ["/images/gui2.png", "/images/gui2.jpeg", "/images/gui2.jpg"] as const;
+  const [childrenAfterSrcIndex, setChildrenAfterSrcIndex] = useState(0);
+  const childrenAfterSrc = childrenAfterCandidates[childrenAfterSrcIndex];
+
+  const handleChildrenAfterError = () => {
+    setChildrenAfterSrcIndex((prev) =>
+      prev < childrenAfterCandidates.length - 1 ? prev + 1 : prev
+    );
+  };
 
   const openMedia = (src: string, alt: string) => {
     setLbSrc(src);
@@ -36,13 +45,13 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
           <p className="section-description">
             As crianças crescem rápido demais. Registre cada fase com imagens
             profissionais, cheias de emoção e carinho, sem sair de casa.
-            Também fazemos fotos tematicas perfeitas para albúns.
+            Também fazemos fotos temáticas perfeitas para álbuns.
           </p>
 
           <ul className="benefits-list">
             <li className="benefit-item">
               <Smile className="benefit-icon" />
-              <span className="highlight">EXPRESSÕES NATURAIS E EXPONTâNEAS</span>
+              <span className="highlight">EXPRESSÕES NATURAIS E ESPONTÂNEAS</span>
             </li>
             <li className="benefit-item">
               <Gift className="benefit-icon" />
@@ -68,6 +77,9 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 src="/images/gui1.png"
                 alt="Ensaio infantil profissional"
               />
@@ -105,6 +117,9 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 src="/images/gui4.jpeg"
                 alt="Criança sorrindo"
               />
@@ -129,27 +144,25 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
             <div
               className="gallery-image secondary"
               onClick={() =>
-                openMedia(
-                  "/images/gui2.png",
-                  "Ensaio infantil"
-                )
+                openMedia(childrenAfterSrc, "Ensaio infantil")
               }
               role="button"
               tabIndex={0}
             >
               <img
-                src="/images/gui2.png"
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
+                src={childrenAfterSrc}
                 alt="Ensaio infantil"
+                onError={handleChildrenAfterError}
               />
               <button
                 type="button"
                 className="idm-expand"
                 onClick={(e) => {
                   e.stopPropagation();
-                  openMedia(
-                    "/images/gui2.png",
-                    "Ensaio infantil"
-                  );
+                  openMedia(childrenAfterSrc, "Ensaio infantil");
                 }}
                 aria-label="Expandir imagem"
               >

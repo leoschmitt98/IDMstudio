@@ -74,6 +74,7 @@ export function GestanteSection({ onCTAClick }: GestanteSectionProps) {
                 muted
                 loop
                 playsInline
+                preload="metadata"
                 aria-label="Ensaio gestante profissional"
               />
 
@@ -101,7 +102,7 @@ export function GestanteSection({ onCTAClick }: GestanteSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img src="/images/Pri3.jpeg" alt="Antes" />
+              <img src="/images/Pri3.jpeg" alt="Antes" loading="lazy" fetchPriority="low" decoding="async" />
               <button
                 type="button"
                 className="idm-expand"
@@ -124,7 +125,7 @@ export function GestanteSection({ onCTAClick }: GestanteSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img src="/images/PriImagem1.png" alt="Depois" />
+              <img src="/images/PriImagem1.png" alt="Depois" loading="lazy" fetchPriority="low" decoding="async" />
               <button
                 type="button"
                 className="idm-expand"

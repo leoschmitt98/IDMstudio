@@ -97,7 +97,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
 </div>
 
 <p className="section-note">
-             • Pacotes mensais disponíveis (orçamento no direct/ whatsapp)
+             • Plano Fashion: R$ 200/mês com direito a 50 fotos
           </p>
         </div>
 
@@ -116,6 +116,9 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
                 alt="Modelo IA com roupa"
               />
@@ -152,6 +155,9 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                 alt="Detalhe da roupa"
                 style={{ filter: "brightness(1.1)" }}
@@ -184,6 +190,9 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               tabIndex={0}
             >
               <img
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                 alt="Modelo em pose"
                 style={{ filter: "saturate(1.2)" }}
@@ -207,7 +216,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
 
           {/* BOTÃO ABAIXO DAS FOTOS */}
            <button type="button" className="idm-cta" onClick={onCTAClick}>
-            Quero meu ensaio de gestante
+            Quero meu plano Fashion
           </button>
         </div>
       </div>
