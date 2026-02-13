@@ -109,7 +109,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               className="gallery-image main"
               onClick={() =>
                 openMedia(
-                  "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                  "/images/video2.mp4",
                   "Modelo IA com roupa"
                 )
               }
@@ -130,7 +130,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+                    "/images/video2.mp4",
                     "Modelo IA com roupa"
                   );
                 }}
@@ -148,7 +148,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               className="gallery-image secondary"
               onClick={() =>
                 openMedia(
-                  "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                  "/images/roupa.png",
                   "Detalhe da roupa"
                 )
               }
@@ -169,7 +169,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                    "/images/roupa.png",
                     "Detalhe da roupa"
                   );
                 }}
@@ -183,7 +183,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               className="gallery-image secondary"
               onClick={() =>
                 openMedia(
-                  "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                  "/images/modelo3.jpg",
                   "Modelo em pose"
                 )
               }
@@ -204,7 +204,7 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+                    "/images/modelo3.jpg",
                     "Modelo em pose"
                   );
                 }}
