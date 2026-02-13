@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ShoppingBag, Sparkles, TrendingUp, Users, Maximize2 } from "lucide-react";
 import { Lightbox } from "./Lightbox";
+import { SmartImage } from "./SmartImage";
 
 interface FashionSectionProps {
   onCTAClick: () => void;
@@ -115,15 +116,13 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <video
-               src="/images/video2.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Ensaio gestante profissional"
-              />
+              <SmartImage
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
+                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800"
+                alt="Modelo IA com roupa"
+               />
 
               <button
                 type="button"
@@ -156,14 +155,14 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
-                src="/images/roupa.png"
+                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                 alt="Detalhe da roupa"
                 style={{ filter: "brightness(1.1)" }}
-              />
+               />
               <button
                 type="button"
                 className="idm-expand"
@@ -191,14 +190,14 @@ export function FashionSection({ onCTAClick }: FashionSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
-                src="/images/modelo3.jpg"
+                src="https://images.unsplash.com/photo-1615338481663-a5f8f3651775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
                 alt="Modelo em pose"
                 style={{ filter: "saturate(1.2)" }}
-              />
+               />
               <button
                 type="button"
                 className="idm-expand"

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Baby, Smile, Gift, Maximize2 } from "lucide-react";
 import { Lightbox } from "./Lightbox";
+import { SmartImage } from "./SmartImage";
 
 interface ChildrenSectionProps {
   onCTAClick: () => void;
@@ -76,13 +77,13 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/gui1.png"
                 alt="Ensaio infantil profissional"
-              />
+               />
 
               <button
                 type="button"
@@ -116,13 +117,13 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/gui4.jpeg"
                 alt="Criança sorrindo"
-              />
+               />
               <button
                 type="button"
                 className="idm-expand"
@@ -149,14 +150,14 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src={childrenAfterSrc}
                 alt="Ensaio infantil"
                 onError={handleChildrenAfterError}
-              />
+               />
               <button
                 type="button"
                 className="idm-expand"

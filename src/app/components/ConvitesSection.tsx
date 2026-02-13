@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PartyPopper, Sparkles, Image as ImageIcon, Send, Maximize2 } from "lucide-react";
 import { Lightbox } from "./Lightbox";
+import { SmartImage } from "./SmartImage";
 
 interface ConvitesSectionProps {
   onCTAClick: () => void;
@@ -94,13 +95,13 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/bento1.png"
                 alt="Convite temático infantil"
-              />
+               />
 
               <button
                 type="button"
@@ -134,13 +135,13 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/bento.jpeg"
                 alt="Criança com tema"
-              />
+               />
               <button
                 type="button"
                 className="idm-expand"
@@ -167,14 +168,14 @@ export function ConvitesSection({ onCTAClick }: ConvitesSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src={invitesAfterSrc}
                 alt="Festa infantil temática"
                 onError={handleInvitesAfterError}
-              />
+               />
               <button
                 type="button"
                 className="idm-expand"

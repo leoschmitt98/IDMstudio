@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dog, Heart, Camera, Maximize2 } from "lucide-react";
 import { Lightbox } from "./Lightbox";
+import { SmartImage } from "./SmartImage";
 
 interface PetsSectionProps {
   onCTAClick: () => void;
@@ -87,13 +88,13 @@ export function PetsSection({ onCTAClick }: PetsSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/dadaEthor3.png"
                 alt="Ensaio de pet profissional"
-              />
+               />
 
               <button
                 type="button"
@@ -127,14 +128,14 @@ export function PetsSection({ onCTAClick }: PetsSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/dadaEthor.jpeg"
                 alt="Pet feliz"
                 style={{ filter: "brightness(1.1)" }}
-              />
+               />
 
               <button
                 type="button"
@@ -165,14 +166,14 @@ export function PetsSection({ onCTAClick }: PetsSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <img
+              <SmartImage
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
                 src="/images/dadaEthor2.png"
                 alt="Pet brincando"
                 style={{ filter: "saturate(1.25)" }}
-              />
+               />
 
               <button
                 type="button"
