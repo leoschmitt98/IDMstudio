@@ -109,7 +109,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
             >
               <span className="comparison-label premium">Qualidade profissional</span>
               <img 
-                src="/agatha1.png"
+                src="/images/agatha1.png"
                 alt="Foto depois da edição"
                 loading="eager"
                 fetchPriority="high"
@@ -122,7 +122,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    '/agatha1.png',
+                    '/images/agatha1.png',
                     'Foto depois da edição'
                   );
                 }}
