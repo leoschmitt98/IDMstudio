@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Heart, Sparkles, Maximize2 } from "lucide-react";
 import { Lightbox } from "./Lightbox";
 import { SmartImage } from "./SmartImage";
+import { SmartVideo } from "./SmartVideo";
 
 interface GestanteSectionProps {
   onCTAClick: () => void;
@@ -69,13 +70,13 @@ export function GestanteSection({ onCTAClick }: GestanteSectionProps) {
               role="button"
               tabIndex={0}
             >
-              <video
+              <SmartVideo
                 src="/images/PriVideo.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 aria-label="Ensaio gestante profissional"
               />
 
