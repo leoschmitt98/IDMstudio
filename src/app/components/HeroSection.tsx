@@ -68,7 +68,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
             <div
               className="comparison-card before"
               onClick={() => openMedia(
-                '/images/Pri4.jpeg',
+                '/images/agatha2.jpeg',
                 'Foto antes da edição'
               )}
               role="button"
@@ -76,7 +76,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
             >
               <span className="comparison-label">Foto caseira</span>
               <img 
-                src="/images/Pri4.jpeg"
+                src="/images/agatha2.jpeg"
                 alt="Foto antes da edição"
                 loading="eager"
                 fetchPriority="high"
@@ -89,7 +89,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    '/images/Pri4.jpeg',
+                    '/images/agatha2.jpeg',
                     'Foto antes da edição'
                   );
                 }}
@@ -101,7 +101,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
             <div
               className="comparison-card after"
               onClick={() => openMedia(
-                '/images/Pri5.png',
+                '/images/agatha1.png',
                 'Foto depois da edição'
               )}
               role="button"
@@ -109,7 +109,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
             >
               <span className="comparison-label premium">Qualidade profissional</span>
               <img 
-                src="/images/Pri5.png"
+                src="/agatha1.png"
                 alt="Foto depois da edição"
                 loading="eager"
                 fetchPriority="high"
@@ -122,7 +122,7 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    '/images/Pri5.png',
+                    '/agatha1.png',
                     'Foto depois da edição'
                   );
                 }}
