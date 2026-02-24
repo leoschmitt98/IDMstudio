@@ -9,6 +9,7 @@ import { FashionSection } from './components/FashionSection';
 import { HowItWorks } from './components/HowItWorks';
 import { Pricing } from './components/Pricing';
 import { FinalCTA } from './components/FinalCTA';
+import { LazySection } from './components/LazySection';
 import { buildWhatsappMessageUrl, getWhatsAppNumber } from './whatsapp';
 import { appendCampaignContext, getUtmContext, trackCtaClick } from './marketing';
 
@@ -172,23 +173,33 @@ export default function App() {
       <MissionSection />
       
       <div id="gestante">
-        <GestanteSection onCTAClick={handleGestanteCTAClick} />
+        <LazySection>
+          <GestanteSection onCTAClick={handleGestanteCTAClick} />
+        </LazySection>
       </div>
 
       <div id="criancas">
-        <ChildrenSection onCTAClick={handleChildrenCTAClick} />
+        <LazySection>
+          <ChildrenSection onCTAClick={handleChildrenCTAClick} />
+        </LazySection>
       </div>
 
       <div id="convites">
-        <ConvitesSection onCTAClick={handleConvitesCTAClick} />
+        <LazySection>
+          <ConvitesSection onCTAClick={handleConvitesCTAClick} />
+        </LazySection>
       </div>
 
       <div id="pets">
-        <PetsSection onCTAClick={handlePetsCTAClick} />
+        <LazySection>
+          <PetsSection onCTAClick={handlePetsCTAClick} />
+        </LazySection>
       </div>
 
       <div id="moda">
-        <FashionSection onCTAClick={handleFashionCTAClick} />
+        <LazySection>
+          <FashionSection onCTAClick={handleFashionCTAClick} />
+        </LazySection>
       </div>
 
       <HowItWorks />
