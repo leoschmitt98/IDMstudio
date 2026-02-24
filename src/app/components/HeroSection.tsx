@@ -78,8 +78,8 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
               <img 
                 src="/images/Pri4.jpeg"
                 alt="Foto antes da edição"
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 style={{ filter: 'brightness(0.85) contrast(0.9)' }}
               />
@@ -111,8 +111,8 @@ export function HeroSection({ onCTAClick }: HeroSectionProps) {
               <img 
                 src="/images/Pri5.png"
                 alt="Foto depois da edição"
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
+                fetchPriority="low"
                 decoding="async"
                 style={{ filter: 'brightness(1.2) contrast(1.15) saturate(1.3)' }}
               />

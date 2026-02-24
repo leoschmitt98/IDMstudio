@@ -7,7 +7,7 @@ interface SmartImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   rootMargin?: string;
 }
 
-export function SmartImage({ src, rootMargin = '120px', ...props }: SmartImageProps) {
+export function SmartImage({ src, rootMargin = '240px', ...props }: SmartImageProps) {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
 
