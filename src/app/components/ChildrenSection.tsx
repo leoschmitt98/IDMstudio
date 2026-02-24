@@ -11,7 +11,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
   const [lbOpen, setLbOpen] = useState(false);
   const [lbSrc, setLbSrc] = useState("");
   const [lbAlt, setLbAlt] = useState("");
-  const childrenAfterCandidates = ["/images/gui2.png", "/images/gui2.jpeg", "/images/gui2.jpg"] as const;
+  const childrenAfterCandidates = ["/images/bilu2.png", "/images/bilu2.png", "/images/bilu2.png"] as const;
   const [childrenAfterSrcIndex, setChildrenAfterSrcIndex] = useState(0);
   const childrenAfterSrc = childrenAfterCandidates[childrenAfterSrcIndex];
 
@@ -70,7 +70,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               className="gallery-image main"
               onClick={() =>
                 openMedia(
-                  "/images/gui1.png",
+                  "/images/bilu4.png",
                   "Ensaio infantil profissional"
                 )
               }
@@ -81,7 +81,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
-                src="/images/gui1.png"
+                src="/images/bilu4.png"
                 alt="Ensaio infantil profissional"
                />
 
@@ -91,7 +91,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "/images/gui1.png",
+                    "/images/bilu4.png",
                     "Ensaio infantil profissional"
                   );
                 }}
@@ -110,7 +110,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
               className="gallery-image secondary"
               onClick={() =>
                 openMedia(
-                  "/images/gui4.jpeg",
+                  "/images/bilu3.jpeg",
                   "Criança sorrindo"
                 )
               }
@@ -121,7 +121,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
                 loading="lazy"
                 fetchPriority="low"
                 decoding="async"
-                src="/images/gui4.jpeg"
+                src="/images/bilu3.jpeg"
                 alt="Criança sorrindo"
                />
               <button
@@ -130,7 +130,7 @@ export function ChildrenSection({ onCTAClick }: ChildrenSectionProps) {
                 onClick={(e) => {
                   e.stopPropagation();
                   openMedia(
-                    "/images/gui4.jpeg",
+                    "/images/bilu3.jpeg",
                     "Criança sorrindo"
                   );
                 }}
